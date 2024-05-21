@@ -1,7 +1,21 @@
-import React from 'react';
+import React, { useState, ChangeEvent } from 'react';
 import * as S from './style';
 
-const Header: React.FC = () => {
+
+interface HeaderProps {
+  onSearch: (term: string) => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ onSearch }) => {
+  const [searchTerm, setSearchTerm] = useState<string>('');
+
+  const handleSearch = (event: ChangeEvent<HTMLInputElement>) => {
+    const term = event.target.value;
+    setSearchTerm(term);
+    onSearch(term);
+  };
+
+
   return (
     <S.HeaderContainer>
       <S.Logo>
@@ -11,7 +25,12 @@ const Header: React.FC = () => {
         />
       </S.Logo>
       <S.SearchBar>
-        <input type="text" placeholder="Search..." />
+        <input
+          type="text"
+          placeholder="Search..."
+          value={searchTerm}
+          onChange={handleSearch}
+        />
       </S.SearchBar>
       <S.Navbar>
         <a href="#home">Home</a>
