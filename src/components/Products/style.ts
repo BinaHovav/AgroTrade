@@ -20,7 +20,8 @@ export const Container = styled.div`
 export const Main = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 40px 70px;
+  margin: 40px 130px;
+  margin-left: 20%;
 `;
 
 export const CategoryHeading = styled.h2`
