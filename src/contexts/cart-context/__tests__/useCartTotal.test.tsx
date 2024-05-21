@@ -43,7 +43,6 @@ describe('[contexts] - cart-context', () => {
 
         expect(total).toEqual({
           productQuantity: 1,
-          installments: 1,
           totalPrice: 10.9,
           currencyId: 'USD',
           currencyFormat: '$',
@@ -53,7 +52,6 @@ describe('[contexts] - cart-context', () => {
 
         expect(total).toEqual({
           productQuantity: 3,
-          installments: 12,
           totalPrice: 50.05,
           currencyId: 'USD',
           currencyFormat: '$',

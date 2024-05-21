@@ -143,10 +143,6 @@ export const SubPriceValue = styled.p`
   margin: 0;
 `;
 
-export const SubPriceInstallment = styled.p`
-  margin: 0;
-`;
-
 export const CheckoutButton = styled.button`
   width: 100%;
   border: 0;

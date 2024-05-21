@@ -1,11 +1,17 @@
 import { useEffect } from 'react';
+import {
+  BrowserRouter,
+  BrowserRouter as Router,
+  Route,
+  Routes,
+} from 'react-router-dom';
+import Home from '../../pages/Home';
 
-import Loader from 'components/Loader';
-import { GithubCorner, GithubStarButton } from 'components/Github';
 import Recruiter from 'components/Recruiter';
 import Filter from 'components/Filter';
 import Products from 'components/Products';
 import Cart from 'components/Cart';
+import Loader from 'components/Loader';
 
 import { useProducts } from 'contexts/products-context';
 
@@ -19,24 +25,29 @@ function App() {
   }, [fetchProducts]);
 
   return (
-    <S.Container>
-      {isFetching && <Loader />}
-      <GithubCorner />
-      <Recruiter />
-      <S.TwoColumnGrid>
-        <S.Side>
-          <Filter />
-          <GithubStarButton />
-        </S.Side>
-        <S.Main>
-          <S.MainHeader>
-            <p>{products?.length} Product(s) found</p>
-          </S.MainHeader>
-          <Products products={products} />
-        </S.Main>
-      </S.TwoColumnGrid>
-      <Cart />
-    </S.Container>
+    <Router>
+      <Routes>
+        <Route path="/home" element={<Home />} />
+        <Route path="/products" element={<Products products={products} />} />
+        {/* <Route path="*" element={<NoPage />} /> */}
+      </Routes>
+    </Router>
+    // <S.Container>s
+    //   {isFetching && <Loader />}
+    //   <Recruiter />
+    //   <S.TwoColumnGrid>
+    //     <S.Side>
+    //       <Filter />
+    //     </S.Side>
+    //     <S.Main>
+    //       <S.MainHeader>
+    //         <p>{products?.length} Product(s) found</p>
+    //       </S.MainHeader>
+    //       <Products products={products} />
+    //     </S.Main>
+    //   </S.TwoColumnGrid>
+    //   <Cart />
+    // </S.Container>
   );
 }
 

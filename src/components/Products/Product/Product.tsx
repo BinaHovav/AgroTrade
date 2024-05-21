@@ -1,6 +1,7 @@
 import { KeyboardEvent } from 'react';
 
 import formatPrice from 'utils/formatPrice';
+
 import { IProduct } from 'models';
 
 import { useCart } from 'contexts/cart-context';
@@ -13,32 +14,8 @@ interface IProps {
 
 const Product = ({ product }: IProps) => {
   const { openCart, addProduct } = useCart();
-  const {
-    sku,
-    title,
-    price,
-    installments,
-    currencyId,
-    currencyFormat,
-    isFreeShipping,
-  } = product;
-
-  const formattedPrice = formatPrice(price, currencyId);
-  let productInstallment;
-
-  if (installments) {
-    const installmentPrice = price / installments;
-
-    productInstallment = (
-      <S.Installment>
-        <span>or {installments} x</span>
-        <b>
-          {currencyFormat}
-          {formatPrice(installmentPrice, currencyId)}
-        </b>
-      </S.Installment>
-    );
-  }
+  const { sku, variety, foodName, price, currencyId, seasonType, image } =
+    product;
 
   const handleAddProduct = () => {
     addProduct({ ...product, quantity: 1 });
@@ -52,22 +29,34 @@ const Product = ({ product }: IProps) => {
     }
   };
 
+  const formattedPrice = formatPrice(price, currencyId);
+
   return (
     <S.Container onKeyUp={handleAddProductWhenEnter} sku={sku} tabIndex={1}>
-      {isFreeShipping && <S.Stopper>Free shipping</S.Stopper>}
-      <S.Image alt={title} />
-      <S.Title>{title}</S.Title>
+      <img
+        src={image}
+        alt={variety}
+        style={{
+          width: '260px',
+          height: '200px',
+          objectFit: 'contain',
+          paddingLeft: '50px',
+          paddingBottom: '-20px',
+        }}
+      />
+      <S.SeasonType>{seasonType}</S.SeasonType>
+      <S.Variety>{foodName}</S.Variety>
       <S.Price>
         <S.Val>
-          <small>{currencyFormat}</small>
-          <b>{formattedPrice.substring(0, formattedPrice.length - 3)}</b>
-          <span>{formattedPrice.substring(formattedPrice.length - 3)}</span>
+          <b>{currencyId}</b>
+          <b>{formattedPrice.substring(0, formattedPrice.length - 4)}</b>
+          <b>{formattedPrice.substring(formattedPrice.length - 4)}</b>
+          <b>- AVG</b>
         </S.Val>
-        {productInstallment}
       </S.Price>
-      <S.BuyButton onClick={handleAddProduct} tabIndex={-1}>
+      {/* <S.BuyButton onClick={handleAddProduct} tabIndex={-1}>
         Add to cart
-      </S.BuyButton>
+      </S.BuyButton> */}
     </S.Container>
   );
 };

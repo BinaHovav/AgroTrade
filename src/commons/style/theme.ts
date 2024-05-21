@@ -4,7 +4,7 @@ export interface StyleClosetTheme {
 }
 
 const colors = {
-  primary: '#1b1a20',
+  primary: '#95c928',
   secondary: '#eabf00',
 };
 

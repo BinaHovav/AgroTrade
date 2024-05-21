@@ -72,12 +72,11 @@ describe('[contexts] - products-context', () => {
             currencyId: 'USD',
             description: '',
             id: 13,
-            installments: 5,
             isFreeShipping: true,
             price: 29.45,
             sku: 51498472915966370,
             style: 'Tule',
-            title: 'Black Tule Oversized',
+            variety: 'Black Tule Oversized',
           },
         ]);
       });

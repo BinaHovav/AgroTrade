@@ -23,7 +23,6 @@ const useCartContext = (): ICartContext => {
 
 const totalInitialValues = {
   productQuantity: 0,
-  installments: 0,
   totalPrice: 0,
   currencyId: 'USD',
   currencyFormat: '$',

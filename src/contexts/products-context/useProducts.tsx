@@ -29,18 +29,18 @@ const useProducts = () => {
       setIsFetching(false);
       let filteredProducts;
 
-      if (filters && filters.length > 0) {
-        filteredProducts = products.filter((p: IProduct) =>
-          filters.find((filter: string) =>
-            p.availableSizes.find((size: string) => size === filter)
-          )
-        );
-      } else {
-        filteredProducts = products;
-      }
+      // if (filters && filters.length > 0) {
+      // filteredProducts = products.filter((p: IProduct) =>
+      // filters.find((filter: string) =>
+      // p.availableSizes.find((size: string) => size === filter)
+      // )
+      //   );
+      // } else {
+      //   filteredProducts = products;
+      // }
 
       setFilters(filters);
-      setProducts(filteredProducts);
+      // setProducts(filteredProducts);
     });
   };
 
