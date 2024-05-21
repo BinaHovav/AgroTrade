@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { IProduct } from 'models';
 import Product from './Product';
 import FoodMenu from 'components/FoodMenu/FoodMenu';
@@ -28,20 +29,38 @@ const organizeProducts = (products: IProduct[]) => {
 };
 
 const Products = ({ products }: IProps) => {
-  const organizedProducts = organizeProducts(products);
+  const [filteredProducts, setFilteredProducts] = useState<IProduct[]>([]);
+  const [searchTerm, setSearchTerm] = useState<string>('');
+
+  const handleSearch = (term: string) => {
+    setSearchTerm(term);
+  
+    if (term) {
+      const lowerCaseTerm = term.toLowerCase();
+      const filtered = products.filter(product =>
+        product.foodName.toLowerCase().startsWith(lowerCaseTerm)
+      );
+      setFilteredProducts(filtered);
+    } else {
+      setFilteredProducts([]);
+    }
+  };
+
+  const productsToDisplay = searchTerm ? filteredProducts : products;
+  const organizedProductsToDisplay = organizeProducts(productsToDisplay);
 
   return (
     <>
-      <Header />
+      <Header onSearch={handleSearch}/>
       <S.Main>
         <FoodMenu />
-        {Object.keys(organizedProducts).map((category) => (
+        {Object.keys(organizedProductsToDisplay).map((category) => (
           <div key={category}>
             <S.CategoryHeading>{category}</S.CategoryHeading>
             <S.Container>
-              {Object.keys(organizedProducts[category]).map((foodName) => (
+              {Object.keys(organizedProductsToDisplay[category]).map((foodName) => (
                 <div key={foodName}>
-                  {organizedProducts[category][foodName].map((product) => (
+                  {organizedProductsToDisplay[category][foodName].map((product) => (
                     <Product product={product} key={product.sku} />
                   ))}
                 </div>
