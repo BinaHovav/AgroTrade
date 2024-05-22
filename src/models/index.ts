@@ -23,7 +23,7 @@ export interface Category {
   subCategories: string[];
 }
 
-export const categories: Category[] = [
+export const foodGroups: Category[] = [
   {
     name: 'Fruits',
     subCategories: [

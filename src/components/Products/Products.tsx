@@ -10,19 +10,20 @@ interface IProps {
 }
 
 const organizeProducts = (products: IProduct[]) => {
-  const organized: Record<string, Record<string, IProduct[]>> = {};
-
+  const organized: Record<string, Record<string, Record<string, IProduct[]>>> = {};
   products.forEach((product) => {
-    const { category, foodName } = product;
-
-    if (!organized[category]) {
-      organized[category] = {};
+    const { category, foodName, foodGroup } = product;
+    if(!organized[foodGroup]) {
+      organized[foodGroup] = {}
     }
-    if (!organized[category][foodName]) {
-      organized[category][foodName] = [];
+    if (!organized[foodGroup][category]) {
+      organized[foodGroup][category] = {};
+    }
+    if (!organized[foodGroup][category][foodName]) {
+      organized[foodGroup][category][foodName] = [];
     }
 
-    organized[category][foodName].push(product);
+    organized[foodGroup][category][foodName].push(product);
   });
 
   return organized;
@@ -31,6 +32,7 @@ const organizeProducts = (products: IProduct[]) => {
 const Products = ({ products }: IProps) => {
   const [filteredProducts, setFilteredProducts] = useState<IProduct[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>('');
+  const [foodGroupToDisplay, setFoodGroupToDisplay] = useState<string>('Fruits');
 
   const handleSearch = (term: string) => {
     setSearchTerm(term);
@@ -45,6 +47,9 @@ const Products = ({ products }: IProps) => {
       setFilteredProducts([]);
     }
   };
+  const handleChangedFoodGroup =  (foodGroup: string) => {
+    setFoodGroupToDisplay(foodGroup)
+  }
 
   const productsToDisplay = searchTerm ? filteredProducts : products;
   const organizedProductsToDisplay = organizeProducts(productsToDisplay);
@@ -53,21 +58,22 @@ const Products = ({ products }: IProps) => {
     <>
       <Header onSearch={handleSearch}/>
       <S.Main>
-        <FoodMenu />
-        {Object.keys(organizedProductsToDisplay).map((category) => (
-          <div key={category}>
-            <S.CategoryHeading>{category}</S.CategoryHeading>
-            <S.Container>
-              {Object.keys(organizedProductsToDisplay[category]).map((foodName) => (
-                <div key={foodName}>
-                  {organizedProductsToDisplay[category][foodName].map((product) => (
-                    <Product product={product} key={product.sku} />
-                  ))}
-                </div>
-              ))}
-            </S.Container>
-          </div>
-        ))}
+        <FoodMenu onChange={handleChangedFoodGroup}/>
+        {foodGroupToDisplay && organizedProductsToDisplay?.[foodGroupToDisplay] ? (
+          Object.keys(organizedProductsToDisplay[foodGroupToDisplay]).map((category) => (
+            <div key={category}>
+              <S.CategoryHeading>{category}</S.CategoryHeading>
+              <S.Container>
+                {Object.keys(organizedProductsToDisplay[foodGroupToDisplay][category]).map((foodName) => (
+                  <div key={foodName}>
+                    {organizedProductsToDisplay[foodGroupToDisplay][category][foodName].map((product) => (
+                      <Product product={product} key={product.sku} />
+                    ))}
+                  </div>
+                ))}
+              </S.Container>
+            </div>
+          ))) : null}
       </S.Main>
     </>
   );

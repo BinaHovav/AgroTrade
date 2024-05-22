@@ -1,13 +1,29 @@
-import React from 'react';
+import React, { useState, ChangeEvent } from 'react';
 import * as S from './style';
 
-import { categories } from 'models';
-const FoodMenu: React.FC = () => {
+import { foodGroups } from 'models';
+
+interface HeaderProps {
+  onChange: (category: string) => void;
+}
+
+const FoodMenu: React.FC<HeaderProps> = ({ onChange }) => {
+  const handleFoodGroupSelect = (event: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
+    const foodGroup = event.currentTarget.textContent;
+    if (foodGroup) {
+      onChange(foodGroup);
+    }
+  }
   return (
     <S.FoodContainer>
       <S.FoodList>
-        {categories.map((category, categoryName) => (
-          <S.FoodItem key={categoryName}>{category.name}</S.FoodItem>
+        {foodGroups.map((category, categoryName) => (
+          <S.FoodItem 
+           key={categoryName}
+           onClick={handleFoodGroupSelect}
+           >
+            {category.name}
+          </S.FoodItem>
         ))}
       </S.FoodList>
     </S.FoodContainer>
