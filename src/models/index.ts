@@ -11,7 +11,7 @@ export interface IProduct {
   volume: number;
   region: string;
   availability: boolean;
-  sellerInfo: string;
+  seller: string;
   userReviews: [];
   currencyId: string;
   currencyFormat: string;

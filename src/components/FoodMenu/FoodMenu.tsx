@@ -8,20 +8,19 @@ interface HeaderProps {
 }
 
 const FoodMenu: React.FC<HeaderProps> = ({ onChange }) => {
-  const handleFoodGroupSelect = (event: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
+  const handleFoodGroupSelect = (
+    event: React.MouseEvent<HTMLLIElement, MouseEvent>
+  ) => {
     const foodGroup = event.currentTarget.textContent;
     if (foodGroup) {
       onChange(foodGroup);
     }
-  }
+  };
   return (
     <S.FoodContainer>
       <S.FoodList>
         {foodGroups.map((category, categoryName) => (
-          <S.FoodItem 
-           key={categoryName}
-           onClick={handleFoodGroupSelect}
-           >
+          <S.FoodItem key={categoryName} onClick={handleFoodGroupSelect}>
             {category.name}
           </S.FoodItem>
         ))}
@@ -31,9 +30,3 @@ const FoodMenu: React.FC<HeaderProps> = ({ onChange }) => {
 };
 
 export default FoodMenu;
-
-//food group select
-
-// FoodContainer - FoodContainer
-// FoodList - FoodList
-// FoodItem - FoodItem

@@ -16,7 +16,7 @@
         "price": 8.6,
         "availability": true,
         "region": "Israel",
-        "sellerInfo": "Jerusalem",
+        "seller": "Jerusalem",
         "userReviews": [],
         "image": "https://res.cloudinary.com/dyu8jwe4o/image/upload/v1715852430/banana_gkrbf9.png"
       },
@@ -35,7 +35,7 @@
         "price": 8.6,
         "availability": true,
         "region": "Israel",
-        "sellerInfo": "Jerusalem",
+        "seller": "Jerusalem",
         "userReviews": [],
         "image": "https://res.cloudinary.com/dyu8jwe4o/image/upload/v1716141260/mango-health-eating-mango_afdlbw.png"
       },
@@ -54,7 +54,7 @@
         "price": 9.8,
         "availability": true,
         "region": "Israel",
-        "sellerInfo": "Jerusalem",
+        "seller": "Jerusalem",
         "userReviews": [],
         "image": "https://res.cloudinary.com/dyu8jwe4o/image/upload/v1715875918/durian-fruit-removebg-preview_kworu1.png"
       },
@@ -74,7 +74,7 @@
         "price": 9.0,
         "availability": true,
         "region": "Israel",
-        "sellerInfo": "Jerusalem",
+        "seller": "Jerusalem",
         "userReviews": [],
         "image": "https://res.cloudinary.com/dyu8jwe4o/image/upload/v1716141331/1-2kg-1-5kg-Frische-Papita--Papaya--9018446_i8hg5l.png"
       },
@@ -93,7 +93,7 @@
         "price": 9.0,
         "availability": true,
         "region": "Israel",
-        "sellerInfo": "Jerusalem",
+        "seller": "Jerusalem",
         "userReviews": [],
         "image": "https://res.cloudinary.com/dyu8jwe4o/image/upload/v1716141657/images-removebg-preview_romydp.png"
       },
@@ -112,7 +112,7 @@
         "price": 5.6,
         "availability": true,
         "region": "Israel",
-        "sellerInfo": "Jerusalem",
+        "seller": "Jerusalem",
         "userReviews": [],
         "image": "https://res.cloudinary.com/dyu8jwe4o/image/upload/v1716118299/strawberry-juice-strawberry-juice-shortcake-strawberry_c5fmhe.png"
       },
@@ -131,7 +131,7 @@
         "price": 5.6,
         "availability": true,
         "region": "Israel",
-        "sellerInfo": "Jerusalem",
+        "seller": "Jerusalem",
         "userReviews": [],
         "image": "https://res.cloudinary.com/dyu8jwe4o/image/upload/v1716118407/fruit-plants-blackberry-1-x-full-plant-in-a-3-litre-pot-327263-ezgif.com-webp-to-jpg-converter-removebg-preview_dgrx2z.png"
       },
@@ -150,7 +150,7 @@
         "price": 5.6,
         "availability": true,
         "region": "Israel",
-        "sellerInfo": "Jerusalem",
+        "seller": "Jerusalem",
         "userReviews": [],
         "image": "https://res.cloudinary.com/dyu8jwe4o/image/upload/v1716118299/smoothie-frutti-di-bosco-blueberry-vaccinium-angustifolium-fresh-blueberries_gnhpfe.png"
       },
@@ -169,7 +169,7 @@
         "price": 5.6,
         "availability": true,
         "region": "Israel",
-        "sellerInfo": "Jerusalem",
+        "seller": "Jerusalem",
         "userReviews": [],
         "image": "https://res.cloudinary.com/dyu8jwe4o/image/upload/v1716143443/willamette-raspberry-bush-2-gallon-removebg-preview_xmjrhn.png"
       },
@@ -188,7 +188,7 @@
         "price": 5.6,
         "availability": true,
         "region": "Israel",
-        "sellerInfo": "Jerusalem",
+        "seller": "Jerusalem",
         "userReviews": [],
         "image": "https://res.cloudinary.com/dyu8jwe4o/image/upload/v1716143442/cranberry-fruit-seeds-removebg-preview_zqyju6.png"
       },
@@ -207,7 +207,7 @@
         "price": 5.6,
         "availability": true,
         "region": "Israel",
-        "sellerInfo": "Jerusalem",
+        "seller": "Jerusalem",
         "userReviews": [],
         "image": "https://res.cloudinary.com/dyu8jwe4o/image/upload/v1716119186/oranges-scaled_vvaz5x.png"
       },
@@ -226,7 +226,7 @@
         "price": 5.6,
         "availability": true,
         "region": "Israel",
-        "sellerInfo": "Jerusalem",
+        "seller": "Jerusalem",
         "userReviews": [],
         "image": "https://res.cloudinary.com/dyu8jwe4o/image/upload/v1716119450/lemon011_ga5ph4.png"
       },
@@ -245,7 +245,7 @@
         "price": 5.6,
         "availability": true,
         "region": "Israel",
-        "sellerInfo": "Jerusalem",
+        "seller": "Jerusalem",
         "userReviews": [],
         "image": "https://res.cloudinary.com/dyu8jwe4o/image/upload/v1716143785/galafruit_clementine-removebg-preview_tntnqq.png"
       },
@@ -264,7 +264,7 @@
         "price": 5.6,
         "availability": true,
         "region": "Israel",
-        "sellerInfo": "Jerusalem",
+        "seller": "Jerusalem",
         "userReviews": [],
         "image": "https://res.cloudinary.com/dyu8jwe4o/image/upload/v1716119519/Grapefruit_fciexn.png"
       },
@@ -283,7 +283,7 @@
         "price": 5.6,
         "availability": true,
         "region": "Israel",
-        "sellerInfo": "Jerusalem",
+        "seller": "Jerusalem",
         "userReviews": [],
         "image": "https://res.cloudinary.com/dyu8jwe4o/image/upload/v1716143875/images__1_-removebg-preview_wl8cth.png"
       },
@@ -302,7 +302,7 @@
         "price": 5.6,
         "availability": true,
         "region": "Israel",
-        "sellerInfo": "Jerusalem",
+        "seller": "Jerusalem",
         "userReviews": [],
         "image": "https://res.cloudinary.com/dyu8jwe4o/image/upload/v1716143875/images__1_-removebg-preview_wl8cth.png"
       },
@@ -321,7 +321,7 @@
         "price": 5.6,
         "availability": true,
         "region": "Israel",
-        "sellerInfo": "Jerusalem",
+        "seller": "Jerusalem",
         "userReviews": [],
         "image": "https://res.cloudinary.com/dyu8jwe4o/image/upload/v1716143875/images__1_-removebg-preview_wl8cth.png"
       },
@@ -340,7 +340,7 @@
         "price": 5.6,
         "availability": true,
         "region": "Israel",
-        "sellerInfo": "Jerusalem",
+        "seller": "Jerusalem",
         "userReviews": [],
         "image": "https://res.cloudinary.com/dyu8jwe4o/image/upload/v1716143875/images__1_-removebg-preview_wl8cth.png"
       },
@@ -359,7 +359,7 @@
         "price": 5.6,
         "availability": true,
         "region": "Israel",
-        "sellerInfo": "Jerusalem",
+        "seller": "Jerusalem",
         "userReviews": [],
         "image": "https://res.cloudinary.com/dyu8jwe4o/image/upload/v1716143875/images__1_-removebg-preview_wl8cth.png"
       }
