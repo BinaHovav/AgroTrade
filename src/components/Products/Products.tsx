@@ -3,7 +3,8 @@ import { IProduct } from 'models';
 import Product from './Product';
 import FoodMenu from 'components/FoodMenu/FoodMenu';
 import Header from 'components/Header/Header';
-import './styles.scss';
+import { Checkbox, Button, Typography } from '@mui/material';
+import './style.scss';
 
 interface IProps {
   products: IProduct[];
