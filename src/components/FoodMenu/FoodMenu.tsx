@@ -1,6 +1,5 @@
-import React, { useState, ChangeEvent } from 'react';
-import * as S from './style';
-
+import React from 'react';
+import './styles.scss';
 import { foodGroups } from 'models';
 
 interface HeaderProps {
@@ -8,32 +7,26 @@ interface HeaderProps {
 }
 
 const FoodMenu: React.FC<HeaderProps> = ({ onChange }) => {
-  const handleFoodGroupSelect = (event: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
+  const handleFoodGroupSelect = (
+    event: React.MouseEvent<HTMLLIElement, MouseEvent>
+  ) => {
     const foodGroup = event.currentTarget.textContent;
     if (foodGroup) {
       onChange(foodGroup);
     }
-  }
+  };
+
   return (
-    <S.FoodContainer>
-      <S.FoodList>
-        {foodGroups.map((category, categoryName) => (
-          <S.FoodItem 
-           key={categoryName}
-           onClick={handleFoodGroupSelect}
-           >
+    <nav className="food-container">
+      <ul className="food-list">
+        {foodGroups.map((category, index) => (
+          <li key={index} className="food-item" onClick={handleFoodGroupSelect}>
             {category.name}
-          </S.FoodItem>
+          </li>
         ))}
-      </S.FoodList>
-    </S.FoodContainer>
+      </ul>
+    </nav>
   );
 };
 
 export default FoodMenu;
-
-//food group select
-
-// FoodContainer - FoodContainer
-// FoodList - FoodList
-// FoodItem - FoodItem
