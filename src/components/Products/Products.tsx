@@ -26,17 +26,15 @@ const organizeProducts = (products: IProduct[]) => {
     if (!organized[foodGroup][category][foodName]) {
       organized[foodGroup][category][foodName] = [];
     }
-
     organized[foodGroup][category][foodName].push(product);
   });
-
   return organized;
 };
 
-const getUniqueRegions = (products: IProduct[]) => {
+function getUniqueRegions(products: IProduct[]): string[] {
   const regions = new Set(products.map((product) => product.region));
   return Array.from(regions);
-};
+}
 
 const sortProducts = (
   products: IProduct[],
