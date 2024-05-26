@@ -1,16 +1,12 @@
-// body {
-//     //need to call it something else, not body
-//     background: url("../images/future-agricutlure.jpg") no-repeat center center fixed;
-//     -webkit-background-size: cover;
-//     -moz-background-size: cover;
-//     -o-background-size: cover;
-//     background-size: cover;
-// }
-
 body {
     background-color: #fff8e7;
-}
-.home-container {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .home-container {
     background: url("../images/future-agricutlure.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -20,17 +16,26 @@ body {
     flex-direction: column;
     text-align: center;
     align-items: center;
-    font-size: 28px;
-    letter-spacing: 6px;
-    margin-top: 8%;
-
-    .login-button {
-        width: 200px;
-        margin-top: 20%;
-        padding: 20px 30px;
-        background-color: black;
-        color: white;
-        border-radius: 50px;
-        text-decoration: none;
-    }
-}
+    justify-content: center;
+    height: 100vh; 
+    width: 100vw; 
+    margin: 0;
+    padding: 0;
+  }
+  
+  .button-container {
+    display: flex;
+    gap: 40px; 
+    margin-top: 150px; 
+  }
+  
+  .login-button {
+    width: 200px;
+    padding: 20px 30px;
+    background-color: black;
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    text-align: center;
+  }
+  

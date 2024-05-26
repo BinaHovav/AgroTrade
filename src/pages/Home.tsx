@@ -7,9 +7,14 @@ const Home = () => {
     <main className="home-container">
       <h1>AGROTRADE</h1>
       <h2>WORLDWIDE TRADING PLATFORM</h2>
-      <Link className="login-button" to="/products">
-        Login
-      </Link>
+      <div className="button-container">
+        <Link className="login-button" to="/products">
+          Login
+        </Link>
+        <Link className="login-button" to="/signup">
+          Sign Up
+        </Link>
+      </div>
     </main>
   );
 };
