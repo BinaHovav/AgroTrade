@@ -29,6 +29,8 @@ function App() {
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/products" element={<Products products={products} />} />
+        //TODO
+        {/* <Route path="/products/pineapple" element={<Pineapple />} /> */}
         {/* <Route path="*" element={<NoPage />} /> */}
       </Routes>
     </Router>
