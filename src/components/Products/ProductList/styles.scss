@@ -1,0 +1,14 @@
+.category-heading {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 2em;
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 50px;
+    margin-top: 20px;
+}
+.product-card {
+    text-decoration: none;
+}

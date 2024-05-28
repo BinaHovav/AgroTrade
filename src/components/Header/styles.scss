@@ -1,23 +1,21 @@
-import styled from 'styled-components/macro';
-
-export const HeaderContainer = styled.div`
+.header-container {
   display: flex;
   align-items: center;
   position: relative;
   width: 100%;
   margin-top: 20px;
-`;
 
-export const Logo = styled.div`
-  position: absolute;
-  left: 50px;
+  .logo {
+    position: absolute;
+    left: 50px;
 
-  img {
-    height: 100px;
+    img {
+      height: 100px;
+    }
   }
-`;
+}
 
-export const SearchBar = styled.div`
+.search-bar {
   margin-left: 300px;
   input {
     padding-left: 35px;
@@ -32,9 +30,9 @@ export const SearchBar = styled.div`
       color: #b3b3b3;
     }
   }
-`;
+}
 
-export const Navbar = styled.nav`
+.navbar {
   position: absolute;
   right: 50px;
   display: flex;
@@ -50,4 +48,4 @@ export const Navbar = styled.nav`
       text-decoration: underline;
     }
   }
-`;
+}

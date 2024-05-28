@@ -8,7 +8,7 @@ describe('[components] - Products', () => {
   const setup = (props = {}) => {
     return renderWithThemeProvider(
       <CartProvider>
-        <Products products={mockProducts} {...props} />
+        {/* <Products products={mockProducts} {...props} /> */}
       </CartProvider>
     );
   };

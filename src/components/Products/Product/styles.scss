@@ -8,8 +8,18 @@
   font-size: 1.5em;
   max-width: 200px;
   outline: none;
+  text-decoration: none;
   &:focus {
     outline: 2px solid #45a049;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      text-decoration: none;
+    }
   }
 
   .variety {
@@ -32,6 +42,14 @@
         margin-left: 5px;
       }
     }
+  }
+
+  img {
+    width: 200px;
+    height: 160px;
+    object-fit: contain;
+    padding-left: 50px;
+    padding-bottom: -20px;
   }
 
   .season-type {
