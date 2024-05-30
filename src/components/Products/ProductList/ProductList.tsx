@@ -21,15 +21,17 @@ const ProductList = ({
               <div className="container">
                 {Object.keys(
                   organizedProducts[foodGroupToDisplay][category]
-                ).map((foodName) => (
-                  <div key={foodName}>
-                    {organizedProducts[foodGroupToDisplay][category][
+                ).map((foodName) => {
+                  const firstProduct =
+                    organizedProducts[foodGroupToDisplay][category][
                       foodName
-                    ].map((product) => (
-                      <Product product={product} key={product.sku} />
-                    ))}
-                  </div>
-                ))}
+                    ][0];
+                  return (
+                    <div key={foodName}>
+                      <Product product={firstProduct} key={firstProduct.sku} />
+                    </div>
+                  );
+                })}
               </div>
             </div>
           ))

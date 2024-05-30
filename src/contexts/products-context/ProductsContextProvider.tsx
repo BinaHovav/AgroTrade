@@ -1,5 +1,4 @@
-import { createContext, useContext, FC, useState } from 'react';
-
+import React, { createContext, useContext, FC, useState } from 'react';
 import { IProduct } from 'models';
 
 export interface IProductsContext {
@@ -9,9 +8,11 @@ export interface IProductsContext {
   setProducts(products: IProduct[]): void;
   filters: string[];
   setFilters(filters: string[]): void;
+  handleBuyNow(product: IProduct): void;
 }
 
 const ProductsContext = createContext<IProductsContext | undefined>(undefined);
+
 const useProductsContext = (): IProductsContext => {
   const context = useContext(ProductsContext);
 
@@ -29,6 +30,11 @@ const ProductsProvider: FC = (props) => {
   const [products, setProducts] = useState<IProduct[]>([]);
   const [filters, setFilters] = useState<string[]>([]);
 
+  const handleBuyNow = (product: IProduct) => {
+    console.log('Buying product:', product);
+    // Implement your purchase logic here (e.g., add to cart, make API call, etc.)
+  };
+
   const ProductContextValue: IProductsContext = {
     isFetching,
     setIsFetching,
@@ -36,6 +42,7 @@ const ProductsProvider: FC = (props) => {
     setProducts,
     filters,
     setFilters,
+    handleBuyNow,
   };
 
   return <ProductsContext.Provider value={ProductContextValue} {...props} />;

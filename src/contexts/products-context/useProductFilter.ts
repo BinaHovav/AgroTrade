@@ -45,7 +45,7 @@ const useProductFilters = () => {
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [foodGroupToDisplay, setFoodGroupToDisplay] =
     useState<string>('Fruits');
-  const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
+  const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
   const [sortBy, setSortBy] = useState<'price' | 'volume'>('price');
   const [selectedRegions, setSelectedRegions] = useState<string[]>([]);
 

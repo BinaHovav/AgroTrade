@@ -1,6 +1,6 @@
 import React from 'react';
-import './styles.scss';
 import { foodGroups } from 'models';
+import './styles.scss';
 
 interface HeaderProps {
   onChange: (category: string) => void;

@@ -1,5 +1,8 @@
+// Header.tsx
 import React, { useState, ChangeEvent } from 'react';
+import { Link } from 'react-router-dom';
 import './styles.scss';
+
 interface HeaderProps {
   onSearch: (term: string) => void;
 }
@@ -30,11 +33,12 @@ const Header: React.FC<HeaderProps> = ({ onSearch }) => {
         />
       </div>
       <div className="navbar">
-        <a href="#home">Home</a>
-        <a href="#how-it-works">How It Works</a>
-        <a href="#about-us">About Us</a>
-        <a href="#contact">Contact</a>
-        <a href="#login">Log In/Sign Up</a>
+        <Link to="/home">Home</Link>
+        <Link to="/products">Products</Link>
+        <Link to="/how-it-works">How It Works</Link>
+        <Link to="/about-us">About Us</Link>
+        <Link to="/contact">Contact</Link>
+        <Link to="/login">Log In/Sign Up</Link>
       </div>
     </main>
   );

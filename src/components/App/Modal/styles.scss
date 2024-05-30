@@ -1,0 +1,77 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
+
+    .modal-content {
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 12px;
+        position: relative;
+        width: 400px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        animation: slideDown 0.4s ease;
+        .close-button {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-size: 1.8rem;
+            color: #4caf50;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: gray;
+            }
+        }
+        .buy-now-button {
+            background-color: #4caf50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            margin-top: 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            &:hover {
+                background-color: #45a049;
+                transform: translateY(-2px);
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            }
+        }
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}

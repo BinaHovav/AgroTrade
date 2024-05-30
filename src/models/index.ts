@@ -15,7 +15,13 @@ export interface IProduct {
   userReviews: [];
   currencyId: string;
   currencyFormat: string;
+  boxWeight: string;
   image: string;
+  contract: string;
+  shipping: string;
+  season: string;
+  length: string;
+  width: string;
 }
 
 export interface Category {

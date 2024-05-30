@@ -1,15 +1,20 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from '../../pages/Home';
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useLocation,
+} from 'react-router-dom';
+import Home from 'pages/Home/Home';
 import FilterAndSort from 'components/FilterAndSort/FilterAndSort';
 import Products from 'components/Products';
-import Cart from 'components/Cart';
 import Header from 'components/Header/Header';
 import FoodPage from 'components/FoodPage/FoodPage';
+import { ProductsProvider } from 'contexts/products-context';
 import useProductFilters from 'contexts/products-context/useProductFilter';
-import * as S from './style';
+import ContactPage from 'pages/ContactPage.tsx/ContactPage';
 
-function App() {
+const App: React.FC = () => {
   const {
     organizedProducts,
     foodGroupToDisplay,
@@ -22,16 +27,30 @@ function App() {
     handleRegionChange,
   } = useProductFilters();
 
+  const products = Object.values(organizedProducts).flatMap((foodGroup) =>
+    Object.values(foodGroup).flatMap((category) =>
+      Object.values(category).flat()
+    )
+  );
+
+  const location = useLocation();
+  const showHeaderAndFilter = location.pathname !== '/home';
+
   return (
-    <Router>
-      <Header onSearch={handleSearch} />
-      <FilterAndSort
-        uniqueRegions={uniqueRegions}
-        selectedRegions={selectedRegions}
-        handleRegionChange={handleRegionChange}
-        handleSortByChange={handleSortByChange}
-        handleSortOrderChange={handleSortOrderChange}
-      />
+    <>
+      {showHeaderAndFilter && (
+        <>
+          <Header onSearch={handleSearch} />
+          <FilterAndSort
+            uniqueRegions={uniqueRegions}
+            selectedRegions={selectedRegions}
+            handleRegionChange={handleRegionChange}
+            handleSortByChange={handleSortByChange}
+            handleSortOrderChange={handleSortOrderChange}
+          />
+        </>
+      )}
+
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route
@@ -43,11 +62,28 @@ function App() {
             />
           }
         />
-        <Route path="/product/:foodName" element={<FoodPage />} />
+        <Route
+          path="/product/:foodName"
+          element={<FoodPage products={products} />}
+        />
         {/* <Route path="*" element={<NoPage />} /> */}
+        <Route
+          path="/contact"
+          element={
+            <>
+              <ContactPage />
+            </>
+          }
+        />
       </Routes>
-    </Router>
+    </>
   );
-}
+};
 
-export default App;
+const AppWrapper: React.FC = () => (
+  <Router>
+    <App />
+  </Router>
+);
+
+export default AppWrapper;

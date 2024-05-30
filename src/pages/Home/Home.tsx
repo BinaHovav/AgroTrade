@@ -1,3 +1,4 @@
+// import ContactSection from 'pages/ContactPage.tsx/ContactSection';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './home.scss';
@@ -15,6 +16,7 @@ const Home = () => {
           Sign Up
         </Link>
       </div>
+      {/* <ContactSection /> */}
     </main>
   );
 };
