@@ -18,6 +18,8 @@
         position: relative;
         width: 400px;
         text-align: center;
+        overflow-y: auto;
+        max-height: 99vh;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         animation: slideDown 0.4s ease;
         .close-button {
@@ -47,6 +49,7 @@
             margin-top: 20px;
             border-radius: 8px;
             cursor: pointer;
+            margin-right: 20px;
             transition: background-color 0.3s ease, transform 0.3s ease;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             &:hover {
@@ -75,3 +78,32 @@
         transform: translateY(0);
     }
 }
+
+.seller{
+    color:black;
+    margin-right: 278px;
+}
+
+.stars-icon{
+    width: 70px;
+    height: 70px;
+    display:flex ;
+    align-items: center;
+    margin-left: 160px;
+    vertical-align: middle;
+    margin-top: 20px;
+}
+
+
+
+
+.close-icon {
+    width: 30px; 
+    height: 30px;
+    margin-right: 60px;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    
+
+  }
