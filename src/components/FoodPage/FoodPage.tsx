@@ -1,4 +1,3 @@
-// FoodPage.tsx
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { IProduct } from 'models';
@@ -49,7 +48,7 @@ const FoodPage: React.FC<IProps> = ({ products }) => {
             >
               <img src={product.image} alt={product.variety} />
               <p className="variety">{product.variety}</p>
-              <p className="seller">{product.seller}</p>
+              <p className="seller">Seller: {product.seller}</p>
               <p className="price">
                 {product.price} {product.currencyId}
               </p>

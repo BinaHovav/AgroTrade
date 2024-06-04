@@ -1,7 +1,7 @@
 .food-card {
   position: relative;
   text-align: left;
-  background: #95c928;
+  background: #8cc04e;
   border-radius: 15px;
   color: white;
   font-weight: bold;
@@ -24,9 +24,16 @@
 
   .variety {
     padding: 10px;
+    font-size: 20px;
   }
 
+  .price,
+  .seller,
   .price {
+    margin-left: 15px;
+    font-size: 20px;
+    color: white;
+
     .val {
       b {
         margin-left: 5px;

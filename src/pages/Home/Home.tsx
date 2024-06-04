@@ -1,4 +1,3 @@
-// import ContactSection from 'pages/ContactPage.tsx/ContactSection';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './home.scss';
@@ -10,13 +9,9 @@ const Home = () => {
       <h2>WORLDWIDE TRADING PLATFORM</h2>
       <div className="button-container">
         <Link className="login-button" to="/products">
-          Login
-        </Link>
-        <Link className="login-button" to="/signup">
-          Sign Up
+          Enter
         </Link>
       </div>
-      {/* <ContactSection /> */}
     </main>
   );
 };

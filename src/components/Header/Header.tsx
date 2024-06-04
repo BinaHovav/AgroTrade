@@ -1,4 +1,3 @@
-// Header.tsx
 import React, { useState, ChangeEvent } from 'react';
 import { Link } from 'react-router-dom';
 import './styles.scss';
@@ -17,7 +16,7 @@ const Header: React.FC<HeaderProps> = ({ onSearch }) => {
   };
 
   return (
-    <main className="header-container">
+    <header className="header-container">
       <div className="logo">
         <img
           src="https://res.cloudinary.com/dyu8jwe4o/image/upload/v1716191502/agrotrade-removebg-preview_z3dmjb.png"
@@ -32,15 +31,15 @@ const Header: React.FC<HeaderProps> = ({ onSearch }) => {
           onChange={handleSearch}
         />
       </div>
-      <div className="navbar">
+      <nav className="navbar">
         <Link to="/home">Home</Link>
         <Link to="/products">Products</Link>
         <Link to="/how-it-works">How It Works</Link>
-        <Link to="/about-us">About Us</Link>
+        <Link to="/about">About Us</Link>
         <Link to="/contact">Contact</Link>
         <Link to="/login">Log In/Sign Up</Link>
-      </div>
-    </main>
+      </nav>
+    </header>
   );
 };
 

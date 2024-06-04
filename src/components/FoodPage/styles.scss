@@ -6,11 +6,11 @@
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         gap: 50px;
-        margin-top: 20px;
+        margin-top: 100px;
         .food-card {
             position: relative;
             text-align: left;
-            background: #95c928;
+            background: #8cc04e;
             border-radius: 15px;
             color: white;
             font-weight: bold;
@@ -31,12 +31,4 @@
             }
         }
     }
-
-    // .variety {
-    //     margin-left: 5px;
-    // }
-    // .seller {
-    // }
-    // .price {
-    // }
 }

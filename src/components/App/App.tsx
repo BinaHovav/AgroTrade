@@ -12,7 +12,8 @@ import Header from 'components/Header/Header';
 import FoodPage from 'components/FoodPage/FoodPage';
 import { ProductsProvider } from 'contexts/products-context';
 import useProductFilters from 'contexts/products-context/useProductFilter';
-import ContactPage from 'pages/ContactPage.tsx/ContactPage';
+import ContactPage from 'pages/ContactPage/ContactPage';
+import AboutPage from 'pages/AboutPage/AboutPage';
 
 const App: React.FC = () => {
   const {
@@ -34,7 +35,7 @@ const App: React.FC = () => {
   );
 
   const location = useLocation();
-  const showHeaderAndFilter = location.pathname !== '/home';
+  const showHeaderAndFilter = location.pathname !== '/';
 
   return (
     <>
@@ -52,7 +53,7 @@ const App: React.FC = () => {
       )}
 
       <Routes>
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route
           path="/products"
           element={
@@ -72,6 +73,14 @@ const App: React.FC = () => {
           element={
             <>
               <ContactPage />
+            </>
+          }
+        />
+        <Route
+          path="/about"
+          element={
+            <>
+              <AboutPage />
             </>
           }
         />

@@ -16,7 +16,7 @@ const ProductList = ({
     <>
       {foodGroupToDisplay && organizedProducts?.[foodGroupToDisplay]
         ? Object.keys(organizedProducts[foodGroupToDisplay]).map((category) => (
-            <div key={category}>
+            <div className="products-list" key={category}>
               <h2 className="category-heading">{category}</h2>
               <div className="container">
                 {Object.keys(
