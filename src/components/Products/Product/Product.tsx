@@ -18,11 +18,10 @@ const Product: React.FC<IProps> = ({ product }) => {
       <Link to={`/product/${toUrlFriendly(foodName)}`}>
         <img src={image} alt={variety} />
         <p className="season-type">{seasonType}</p>
-        <p className="variety">{foodName}</p>
-        <div className="price">
-          <p className="val">
-            <b>{currencyId}</b>
-            <b>{price}</b>
+        <div className="product-details">
+          <p>{foodName}</p>
+          <p>
+            $ {price} / kg - AVG
           </p>
         </div>
       </Link>

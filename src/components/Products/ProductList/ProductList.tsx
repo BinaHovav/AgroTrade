@@ -27,9 +27,7 @@ const ProductList = ({
                       foodName
                     ][0];
                   return (
-                    <div key={foodName}>
                       <Product product={firstProduct} key={firstProduct.sku} />
-                    </div>
                   );
                 })}
               </div>

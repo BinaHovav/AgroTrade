@@ -11,14 +11,12 @@ interface IProps {
 
 const Products = ({ organizedProducts, foodGroupToDisplay }: IProps) => {
   return (
-    <div className="main">
-      <div className="main-content">
-        <FoodMenu onChange={() => {}} />
-        <ProductList
-          organizedProducts={organizedProducts}
-          foodGroupToDisplay={foodGroupToDisplay}
-        />
-      </div>
+    <div className="products-container">
+      <FoodMenu onChange={() => {}} />
+      <ProductList
+        organizedProducts={organizedProducts}
+        foodGroupToDisplay={foodGroupToDisplay}
+      />
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { IProduct } from 'models';
-import Modal from 'components/App/Modal/Modal';
+import Modal from 'components/Modal/Modal';
 import { useProductsContext } from 'contexts/products-context/ProductsContextProvider';
 import './styles.scss';
 
@@ -37,8 +37,7 @@ const FoodPage: React.FC<IProps> = ({ products }) => {
   };
 
   return (
-    <div className="food-page">
-      <div className="food-page-list">
+    <div className="container">
         {filteredProducts.length > 0 ? (
           filteredProducts.map((product, index) => (
             <div
@@ -46,18 +45,19 @@ const FoodPage: React.FC<IProps> = ({ products }) => {
               className="food-card"
               onClick={() => handleProductClick(product)}
             >
-              <img src={product.image} alt={product.variety} />
-              <p className="variety">{product.variety}</p>
-              <p className="seller">Seller: {product.seller}</p>
+              <img className="image" src={product.image} alt={product.variety} />
+              <div className='product-details'>
+              <p>{product.variety}</p>
+              <p>{product.seller}</p>
               <p className="price">
-                {product.price} {product.currencyId}
+               $ {product.price} / kg 
               </p>
+              </div>
             </div>
           ))
         ) : (
           <p>No products found for {capitalizedFoodName}</p>
         )}
-      </div>
       {selectedProduct && (
         <Modal
           product={selectedProduct}

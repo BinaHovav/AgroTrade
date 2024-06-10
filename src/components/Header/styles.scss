@@ -2,14 +2,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
   padding: 10px 50px;
   background: #599e0a;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   font-weight: bold;
-  position: fixed;
-  top: 0;
-  z-index: 10;
+  width: 100%;
   .logo img {
     height: 60px;
     transition: transform 0.3s ease;

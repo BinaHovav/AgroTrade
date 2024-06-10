@@ -8,7 +8,11 @@ interface IFilterAndSortProps {
   handleRegionChange: (region: string) => void;
   handleSortByChange: (sortBy: 'price' | 'volume') => void;
   handleSortOrderChange: (order: 'asc' | 'desc') => void;
+  uniqueSellers: string[]; 
+  selectedSellers: string[]; 
+  handleSellerChange: (seller: string) => void; 
 }
+
 
 const FilterAndSort = ({
   uniqueRegions,
@@ -16,6 +20,9 @@ const FilterAndSort = ({
   handleRegionChange,
   handleSortByChange,
   handleSortOrderChange,
+  uniqueSellers, 
+  selectedSellers,
+  handleSellerChange,
 }: IFilterAndSortProps) => {
   return (
     <Sidebar
@@ -24,6 +31,9 @@ const FilterAndSort = ({
       handleRegionChange={handleRegionChange}
       handleSortByChange={handleSortByChange}
       handleSortOrderChange={handleSortOrderChange}
+      uniqueSellers={uniqueSellers} 
+      selectedSellers={selectedSellers} 
+      handleSellerChange={handleSellerChange} 
     />
   );
 };

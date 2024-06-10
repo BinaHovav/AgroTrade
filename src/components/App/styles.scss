@@ -1,0 +1,20 @@
+.main-content {
+    display: flex;
+    flex-direction: row;
+    gap: 16px; // Adjust the gap as needed
+  }
+  
+  .products-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  
+  .filter-and-sort {
+    width: 250px; // Adjust width as needed
+  }
+  
+  .product-list {
+    flex-grow: 1;
+  }
+  

@@ -1,4 +1,3 @@
-// src/hooks/useProductFilters.ts
 import { useState, useEffect, useCallback } from 'react';
 import { IProduct } from 'models';
 import { useProducts } from 'contexts/products-context';
@@ -29,6 +28,11 @@ const getUniqueRegions = (products: IProduct[]): string[] => {
   return Array.from(regions);
 };
 
+const getUniqueSellers = (products: IProduct[]): string[] => {
+  const sellers = new Set(products.map((product) => product.seller));
+  return Array.from(sellers);
+};
+
 const sortProducts = (
   products: IProduct[],
   sortBy: 'price' | 'volume',
@@ -48,6 +52,8 @@ const useProductFilters = () => {
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
   const [sortBy, setSortBy] = useState<'price' | 'volume'>('price');
   const [selectedRegions, setSelectedRegions] = useState<string[]>([]);
+  const [uniqueSellers, setUniqueSellers] = useState<string[]>([]);
+  const [selectedSellers, setSelectedSellers] = useState<string[]>([]);
 
   useEffect(() => {
     fetchProducts();
@@ -61,6 +67,10 @@ const useProductFilters = () => {
       : products;
     setFilteredProducts(filtered);
   }, [searchTerm, products]);
+
+  useEffect(() => {
+    setUniqueSellers(getUniqueSellers(products));
+  }, [products]);
 
   const handleSearch = useCallback((term: string) => {
     setSearchTerm(term);
@@ -86,9 +96,18 @@ const useProductFilters = () => {
     );
   }, []);
 
+  const handleSellerChange = useCallback((seller: string) => {
+    setSelectedSellers((prevSelectedSellers) =>
+      prevSelectedSellers.includes(seller)
+        ? prevSelectedSellers.filter((s) => s !== seller)
+        : [...prevSelectedSellers, seller]
+    );
+  }, []);
+
   const productsToDisplay = filteredProducts.filter(
     (product) =>
-      selectedRegions.length === 0 || selectedRegions.includes(product.region)
+      (selectedRegions.length === 0 || selectedRegions.includes(product.region)) &&
+      (selectedSellers.length === 0 || selectedSellers.includes(product.seller))
   );
 
   const sortedProductsToDisplay = sortProducts(
@@ -110,6 +129,9 @@ const useProductFilters = () => {
     handleSortOrderChange,
     handleSortByChange,
     handleRegionChange,
+    uniqueSellers,
+    selectedSellers,
+    handleSellerChange,
   };
 };
 

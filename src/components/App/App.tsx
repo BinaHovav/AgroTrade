@@ -14,6 +14,7 @@ import { ProductsProvider } from 'contexts/products-context';
 import useProductFilters from 'contexts/products-context/useProductFilter';
 import ContactPage from 'pages/ContactPage/ContactPage';
 import AboutPage from 'pages/AboutPage/AboutPage';
+import './styles.scss';
 
 const App: React.FC = () => {
   const {
@@ -26,6 +27,9 @@ const App: React.FC = () => {
     handleSortOrderChange,
     handleSortByChange,
     handleRegionChange,
+    uniqueSellers, 
+    selectedSellers, 
+    handleSellerChange,
   } = useProductFilters();
 
   const products = Object.values(organizedProducts).flatMap((foodGroup) =>
@@ -42,32 +46,40 @@ const App: React.FC = () => {
       {showHeaderAndFilter && (
         <>
           <Header onSearch={handleSearch} />
-          <FilterAndSort
-            uniqueRegions={uniqueRegions}
-            selectedRegions={selectedRegions}
-            handleRegionChange={handleRegionChange}
-            handleSortByChange={handleSortByChange}
-            handleSortOrderChange={handleSortOrderChange}
-          />
+          <div className="main-content">
+            <FilterAndSort
+              uniqueRegions={uniqueRegions}
+              selectedRegions={selectedRegions}
+              handleRegionChange={handleRegionChange}
+              handleSortByChange={handleSortByChange}
+              handleSortOrderChange={handleSortOrderChange}
+              uniqueSellers={uniqueSellers} 
+              selectedSellers={selectedSellers} 
+              handleSellerChange={handleSellerChange} 
+            />
+            <div className="content-container">
+              <Routes>
+                <Route
+                  path="/products"
+                  element={
+                    <Products
+                      organizedProducts={organizedProducts}
+                      foodGroupToDisplay={foodGroupToDisplay}
+                    />
+                  }
+                />
+                <Route
+                  path="/product/:foodName"
+                  element={<FoodPage products={products} />}
+                />
+              </Routes>
+            </div>
+          </div>
         </>
       )}
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route
-          path="/products"
-          element={
-            <Products
-              organizedProducts={organizedProducts}
-              foodGroupToDisplay={foodGroupToDisplay}
-            />
-          }
-        />
-        <Route
-          path="/product/:foodName"
-          element={<FoodPage products={products} />}
-        />
-        {/* <Route path="*" element={<NoPage />} /> */}
         <Route
           path="/contact"
           element={

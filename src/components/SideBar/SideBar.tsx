@@ -4,7 +4,10 @@ import './styles.scss';
 interface SidebarProps {
   uniqueRegions: string[];
   selectedRegions: string[];
+  uniqueSellers: string[];
+  selectedSellers: string[];
   handleRegionChange: (region: string) => void;
+  handleSellerChange: (seller: string) => void;
   handleSortByChange: (sortBy: 'price' | 'volume') => void;
   handleSortOrderChange: (order: 'asc' | 'desc') => void;
 }
@@ -12,12 +15,16 @@ interface SidebarProps {
 const Sidebar: React.FC<SidebarProps> = ({
   uniqueRegions,
   selectedRegions,
+  uniqueSellers,
+  selectedSellers,
   handleRegionChange,
+  handleSellerChange,
   handleSortByChange,
   handleSortOrderChange,
 }) => {
   return (
     <aside className="sidebar">
+      <h2>Filter by Region</h2>
       {uniqueRegions.map((region) => (
         <div className="checkboxContainer" key={region}>
           <label>
@@ -32,6 +39,23 @@ const Sidebar: React.FC<SidebarProps> = ({
           </label>
         </div>
       ))}
+      
+      <h2>Filter by Seller</h2>
+      {uniqueSellers.map((seller) => (
+        <div className="checkboxContainer" key={seller}>
+          <label>
+            <input
+              className="checkboxInput"
+              type="checkbox"
+              value={seller}
+              checked={selectedSellers.includes(seller)}
+              onChange={() => handleSellerChange(seller)}
+            />
+            {seller}
+          </label>
+        </div>
+      ))}
+
       <div className="buttonContainer">
         <button
           className="styledButton"
