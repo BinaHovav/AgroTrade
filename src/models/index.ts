@@ -35,7 +35,7 @@ export const foodGroups: Category[] = [
     subCategories: [
       'Tropical & Exotic',
       'Citrus',
-      'Berries' /* Add more sub-categories as needed */,
+      'Berries' ,
     ],
   },
   {
@@ -43,7 +43,7 @@ export const foodGroups: Category[] = [
     subCategories: [
       'Leafy Greens',
       'Root Vegetables',
-      'Cruciferous' /* Add more sub-categories as needed */,
+      'Cruciferous',
     ],
   },
   {
@@ -51,7 +51,7 @@ export const foodGroups: Category[] = [
     subCategories: [
       'Grains',
       'Legumes',
-      'Nuts' /* Add more sub-categories as needed */,
+      'Nuts' ,
     ],
   },
   {

@@ -1,21 +1,19 @@
-import axios from 'axios';
 import { IGetProductsResponse } from 'models';
 
-const isProduction = process.env.NODE_ENV === 'production';
+const loadLocalProducts = async (): Promise<IGetProductsResponse> => {
+  return require('static/json/products.json');
+};
 
 export const getProducts = async () => {
   let response: IGetProductsResponse;
 
-  if (isProduction) {
-    response = await axios.get(
-      'https://react-shopping-cart-67954.firebaseio.com/products.json'
-    );
-  } else {
-    response = require('static/json/products.json');
+  try {
+    response = await loadLocalProducts();
+  } catch (error) {
+    console.error('Error loading local products:', error);
+    throw error;
   }
 
   const { products } = response.data || [];
-
   return products;
 };
- 
