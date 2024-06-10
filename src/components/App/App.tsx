@@ -10,7 +10,6 @@ import FilterAndSort from 'components/FilterAndSort/FilterAndSort';
 import Products from 'components/Products';
 import Header from 'components/Header/Header';
 import FoodPage from 'components/FoodPage/FoodPage';
-import { ProductsProvider } from 'contexts/products-context';
 import useProductFilters from 'contexts/products-context/useProductFilter';
 import ContactPage from 'pages/ContactPage/ContactPage';
 import AboutPage from 'pages/AboutPage/AboutPage';
@@ -23,7 +22,6 @@ const App: React.FC = () => {
     uniqueRegions,
     selectedRegions,
     handleSearch,
-    handleChangedFoodGroup,
     handleSortOrderChange,
     handleSortByChange,
     handleRegionChange,

@@ -8,7 +8,7 @@ interface IProps {
 }
 
 const Product: React.FC<IProps> = ({ product }) => {
-  const { sku, variety, foodName, price, currencyId, seasonType, image } =
+  const { variety, foodName, price, seasonType, image } =
     product;
 
   const toUrlFriendly = (str: string) => str.toLowerCase().replace(/\s+/g, '-');

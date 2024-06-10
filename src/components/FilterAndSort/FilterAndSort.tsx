@@ -1,6 +1,5 @@
 import React from 'react';
 import Sidebar from 'components/SideBar/SideBar';
-import { IProduct } from 'models';
 
 interface IFilterAndSortProps {
   uniqueRegions: string[];
