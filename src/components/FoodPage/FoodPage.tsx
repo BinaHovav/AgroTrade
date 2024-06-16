@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { IProduct } from 'models';
 import Modal from 'components/Modal/Modal';
 import { useProductsContext } from 'contexts/products-context/ProductsContextProvider';
@@ -37,27 +37,33 @@ const FoodPage: React.FC<IProps> = ({ products }) => {
   };
 
   return (
+    <div>
+      <nav className="breadcrumb">
+        <Link to="/products">Products</Link> &gt; <span>{capitalizedFoodName}</span>
+      </nav>
+      
     <div className="container">
-        {filteredProducts.length > 0 ? (
-          filteredProducts.map((product, index) => (
-            <div
-              key={index}
-              className="food-card"
-              onClick={() => handleProductClick(product)}
-            >
-              <img className="image" src={product.image} alt={product.variety} />
-              <div className='product-details'>
+      {filteredProducts.length > 0 ? (
+        filteredProducts.map((product, index) => (
+          <div
+            key={index}
+            className="food-card"
+            onClick={() => handleProductClick(product)}
+          >
+            <img className="image" src={product.image} alt={product.variety} />
+            <div className='product-details'>
               <p>{product.variety}</p>
-              <p>{product.seller}</p>
+              <p>Seller: {product.seller}</p>
               <p className="price">
                $ {product.price} / kg 
               </p>
-              </div>
             </div>
-          ))
-        ) : (
-          <p>No products found for {capitalizedFoodName}</p>
-        )}
+          </div>
+        ))
+      ) : (
+        <p>No products found for {capitalizedFoodName}</p>
+      )}
+      </div>
       {selectedProduct && (
         <Modal
           product={selectedProduct}

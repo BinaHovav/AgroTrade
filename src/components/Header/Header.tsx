@@ -19,7 +19,7 @@ const Header: React.FC<HeaderProps> = ({ onSearch }) => {
     <header className="header-container">
       <div className="logo">
         <img
-          src="https://res.cloudinary.com/dyu8jwe4o/image/upload/v1716191502/agrotrade-removebg-preview_z3dmjb.png"
+          src="https://res.cloudinary.com/dyu8jwe4o/image/upload/v1718270490/agrotrade-high-resolution-logo-transparent_kvlrtd.png"
           alt="Logo"
         />
       </div>
@@ -32,7 +32,7 @@ const Header: React.FC<HeaderProps> = ({ onSearch }) => {
         />
       </div>
       <nav className="navbar">
-        <Link to="/home">Home</Link>
+        <Link to="/">Home</Link>
         <Link to="/products">Products</Link>
         <Link to="/how-it-works">How It Works</Link>
         <Link to="/about">About Us</Link>

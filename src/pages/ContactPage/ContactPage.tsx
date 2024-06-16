@@ -9,11 +9,9 @@ const ContactPage: React.FC = () => {
         We are here to help you. Contact us through any of the following ways:
       </p>
       <ul>
-        <li>Email: support@yourcompany.com</li>
-        <li>Phone: (123) 456-7890</li>
-        <li>
-          Chat: Click the chat icon in the bottom right corner to start a chat
-        </li>
+        <li>Email: support@algotrade.com</li>
+        <li>Phone: (972) 03-8493993</li>
+ 
       </ul>
       <h3>Frequently Asked Questions</h3>
       <div className="faq">

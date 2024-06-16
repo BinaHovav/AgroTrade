@@ -22,22 +22,27 @@ const Modal: React.FC<IModalProps> = ({ product, onClose, onBuyNow }) => {
     setShowConfirmation(true);
     setTimeout(() => {
       setShowConfirmation(false);
-      onClose(); 
-    }, 3000); 
+      onClose();
+    }, 3000);
   };
+
 
   return (
     <>
       {showConfirmation ? (
         <div className="confirmation-popup">
-          <p>Your order has been placed, please check your email for further details.</p>
+          <p>
+            Your order has been placed, please check your email for further
+            details.
+          </p>
         </div>
       ) : (
         <div className="modal-overlay" onClick={onClose}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <button className="close-button" onClick={onClose}>
-              X
+              Back
             </button>
+      
             {isBuyNow ? (
               <div className="buy-now-content">
                 <h1>Confirmation</h1>
@@ -59,7 +64,7 @@ const Modal: React.FC<IModalProps> = ({ product, onClose, onBuyNow }) => {
                 <strong>Total price: $22,464</strong>
                 <br></br>
                 <p>Shipping method: CIF</p>
-                <button className="button" onClick={handleConfirm}>
+                <button className="confirm-button" onClick={handleConfirm}>
                   Confirm
                 </button>
               </div>
@@ -76,16 +81,23 @@ const Modal: React.FC<IModalProps> = ({ product, onClose, onBuyNow }) => {
                 <div className="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
                 <div className="grid-container">
                   <div className="item">
-                    <img src="https://img.icons8.com/?size=100&id=119&format=png&color=000000" alt="icon"/>
+                    <img
+                      src="https://img.icons8.com/?size=100&id=119&format=png&color=000000"
+                      alt="icon"
+                    />
                     <strong>Price:</strong> {product.price} {product.currencyId}
                   </div>
                   <div className="item">
-                    <img src="https://img.icons8.com/?size=100&id=7820&format=png&color=000000" alt="icon"/>
+                    <img
+                      src="https://img.icons8.com/?size=100&id=7820&format=png&color=000000"
+                      alt="icon"
+                    />
                     <strong>Seller:</strong> {product.seller}
                   </div>
                   <div className="item">
                     <img
-                      src="https://img.icons8.com/?size=100&id=wyvdHU0bHnzE&format=png&color=000000" alt="icon"
+                      src="https://img.icons8.com/?size=100&id=wyvdHU0bHnzE&format=png&color=000000"
+                      alt="icon"
                       className="icon"
                     />
                     <strong>Box Weight:</strong>
@@ -93,21 +105,25 @@ const Modal: React.FC<IModalProps> = ({ product, onClose, onBuyNow }) => {
                   </div>
                   <div className="item">
                     <img
-                      src="https://img.icons8.com/?size=100&id=t5GRNS5yIsHP&format=png&color=000000" alt="icon"
+                      src="https://img.icons8.com/?size=100&id=t5GRNS5yIsHP&format=png&color=000000"
+                      alt="icon"
                       className="icon"
                     />
-                    <strong className="item">Contract:</strong> {product.contract}
+                    <strong className="item">Contract:</strong>{' '}
+                    {product.contract}
                   </div>
                   <div className="item">
                     <img
-                      src="https://img.icons8.com/?size=100&id=bYsqgmZHHeq8&format=png&color=000000" alt="icon"
+                      src="https://img.icons8.com/?size=100&id=bYsqgmZHHeq8&format=png&color=000000"
+                      alt="icon"
                       className="icon"
                     />
                     <strong>Season:</strong> {product.season}
                   </div>
                   <div className="item">
                     <img
-                      src="https://img.icons8.com/?size=100&id=17856&format=png&color=000000" alt="icon"
+                      src="https://img.icons8.com/?size=100&id=17856&format=png&color=000000"
+                      alt="icon"
                       className="icon"
                     />
                     <strong>Shipping:</strong> {product.shipping}
@@ -141,9 +157,6 @@ const Modal: React.FC<IModalProps> = ({ product, onClose, onBuyNow }) => {
                 <div className="button-container">
                   <button className="button" onClick={handleBuyNow}>
                     Buy Now
-                  </button>
-                  <button className="button" onClick={handleBuyNow}>
-                    Contact Seller
                   </button>
                 </div>
               </>

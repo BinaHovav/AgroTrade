@@ -37,64 +37,45 @@ const App: React.FC = () => {
   );
 
   const location = useLocation();
-  const showHeaderAndFilter = location.pathname !== '/';
+  const showFilterAndSort = !['/', '/contact', '/about'].includes(location.pathname);
 
   return (
     <>
-      {showHeaderAndFilter && (
-        <>
-          <Header onSearch={handleSearch} />
-          <div className="main-content">
-            <FilterAndSort
-              uniqueRegions={uniqueRegions}
-              selectedRegions={selectedRegions}
-              handleRegionChange={handleRegionChange}
-              handleSortByChange={handleSortByChange}
-              handleSortOrderChange={handleSortOrderChange}
-              uniqueSellers={uniqueSellers} 
-              selectedSellers={selectedSellers} 
-              handleSellerChange={handleSellerChange} 
+      <Header onSearch={handleSearch} />
+      <div className="main-content">
+        {showFilterAndSort && (
+          <FilterAndSort
+            uniqueRegions={uniqueRegions}
+            selectedRegions={selectedRegions}
+            handleRegionChange={handleRegionChange}
+            handleSortByChange={handleSortByChange}
+            handleSortOrderChange={handleSortOrderChange}
+            uniqueSellers={uniqueSellers} 
+            selectedSellers={selectedSellers} 
+            handleSellerChange={handleSellerChange} 
+          />
+        )}
+        <div className="content-container">
+          <Routes>
+            <Route
+              path="/products"
+              element={
+                <Products
+                  organizedProducts={organizedProducts}
+                  foodGroupToDisplay={foodGroupToDisplay}
+                />
+              }
             />
-            <div className="content-container">
-              <Routes>
-                <Route
-                  path="/products"
-                  element={
-                    <Products
-                      organizedProducts={organizedProducts}
-                      foodGroupToDisplay={foodGroupToDisplay}
-                    />
-                  }
-                />
-                <Route
-                  path="/product/:foodName"
-                  element={<FoodPage products={products} />}
-                />
-              </Routes>
-            </div>
-          </div>
-        </>
-      )}
-
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route
-          path="/contact"
-          element={
-            <>
-              <ContactPage />
-            </>
-          }
-        />
-        <Route
-          path="/about"
-          element={
-            <>
-              <AboutPage />
-            </>
-          }
-        />
-      </Routes>
+            <Route
+              path="/product/:foodName"
+              element={<FoodPage products={products} />}
+            />
+            <Route path="/" element={<Home />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/about" element={<AboutPage />} />
+          </Routes>
+        </div>
+      </div>
     </>
   );
 };

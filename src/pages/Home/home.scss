@@ -7,6 +7,7 @@ body {
 }
 
 .home-container {
+  position: relative;
   background: url("../../images/future-agricutlure.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -21,15 +22,32 @@ body {
   width: 100vw;
   margin: 0;
   padding: 0;
+  font-size: large;
+  img{
+    position: absolute;
+    top: 3%;
+    height:140px;
+  }
+  .titles{
+    color: rgb(29, 29, 29);
+    position: absolute;
+    top: 30%;
+    font-size: 1.5rem;
+    font-weight: 800;
+  }
+  .button-container{
+    margin-top: 150px;
+    .login-button {
+      padding: 10px 50px;
+      font-size: 30px;
+      background-color: black;
+      color: white;
+      border-radius: 50px;
+      text-decoration: none;
+      text-align: center;
+    }
+  }
 }
 
 
-.login-button {
-  width: 200px;
-  padding: 20px 30px;
-  background-color: black;
-  color: white;
-  border-radius: 50px;
-  text-decoration: none;
-  text-align: center;
-}
+
